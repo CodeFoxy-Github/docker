@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: cd delete-host && docker build . --file Dockerfile --tag codefoxy/delete-host:$(date +%s)
+      run: cd delete-host && docker build . --file Dockerfile --tag codefoxy/delete-host:$(date +%s) && docker login &&  docker push codefoxy/delete-host
